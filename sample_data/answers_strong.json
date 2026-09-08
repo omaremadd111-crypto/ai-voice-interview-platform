@@ -1,0 +1,15 @@
+{
+  "demo_notice": "DEMO DATA — fictional content created for this prototype. Not an actual FlairsTech vacancy, requirement, candidate, or process.",
+  "profile": "strong",
+  "answers": {
+    "introduction": "I am a junior software engineer focused on Python services and applied AI systems. The fictional Atlas RAG project made me interested in this role because it combines retrieval engineering, evaluation, APIs, and collaboration.",
+    "candidate_background": "I have two years of hands-on experience building Python and SQL services. I built the Atlas RAG assistant, wrote tests, deployed it with Docker on AWS, and explained evaluation results to product stakeholders.",
+    "cv_project_validation": "I built the Atlas RAG service as a Python REST API backed by SQL and a vector database. I combined semantic retrieval with keyword retrieval and reranking because semantic search missed exact product terms. On a labelled set of 220 queries, successful retrieval improved from 71 percent to 88 percent.",
+    "technical": "I designed the RAG retrieval pipeline with chunking, embeddings, a vector database, hybrid search, and reranking. I evaluated retrieval against 220 labelled queries, tracked recall and failure categories, added pytest coverage, packaged the API with Docker, and deployed it on AWS.",
+    "problem_solving": "A production retrieval endpoint had high p95 latency. I measured each stage, found repeated vector database lookups, implemented caching and batched requests, and added regression tests because reliability mattered. The change reduced p95 latency by 38 percent without lowering evaluation recall.",
+    "behavioral": "I communicated a retrieval-quality regression to engineers and product stakeholders with examples from the evaluation set. I explained the trade-off, proposed a staged reranking change, and documented the decision so that the team could validate the result together.",
+    "closing": "I would like to understand how the team evaluates retrieval quality, reviews production AI changes, and supports junior engineers.",
+    "follow_up": "The concrete implementation used Python, SQL, a vector database, hybrid retrieval, reranking, pytest, Docker, and AWS. I selected the approach because our 220-query evaluation showed a 17-point retrieval improvement and a 38 percent latency reduction after optimization.",
+    "fallback": "I can give a concrete example from the Atlas RAG service, including the Python architecture, retrieval evaluation, tests, measured results, and the technical trade-offs I documented."
+  }
+}

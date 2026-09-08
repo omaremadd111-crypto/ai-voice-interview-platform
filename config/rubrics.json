@@ -1,0 +1,33 @@
+{
+  "profiles": {
+    "technical": {
+      "description": "Default profile for technical/engineering roles.",
+      "weights": {
+        "technical_knowledge": 30,
+        "relevant_experience": 25,
+        "problem_solving": 20,
+        "job_requirement_coverage": 15,
+        "communication": 10,
+        "behavioral_competencies": 0
+      }
+    },
+    "general": {
+      "description": "Balanced profile for non-technical or behavior-heavy roles.",
+      "weights": {
+        "relevant_experience": 25,
+        "communication": 20,
+        "behavioral_competencies": 20,
+        "problem_solving": 15,
+        "technical_knowledge": 10,
+        "job_requirement_coverage": 10
+      }
+    }
+  },
+  "default_profile": "technical",
+  "thresholds": {
+    "min_evidence_coverage": 0.5,
+    "strong_evidence_min_score": 75,
+    "proceed_min_score": 60,
+    "pass_score_threshold": 60
+  }
+}

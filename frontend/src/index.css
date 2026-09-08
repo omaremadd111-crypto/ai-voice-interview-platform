@@ -1,0 +1,190 @@
+@import 'tailwindcss';
+
+/* Design tokens. Tailwind v4 is CSS-first: these @theme values generate the
+   utility classes (bg-brand-600, text-ink-500, text-2xl, rounded-lg, ...) used
+   across the app, so the whole system lives in exactly one place. Refining a
+   value here updates every existing usage with zero markup changes -- which is
+   why the type scale below reuses Tailwind's own xs/sm/base/lg/xl/2xl/3xl
+   names instead of inventing a parallel scale nothing uses yet. */
+@theme {
+  /* ---- Ink (neutral) ramp -- unchanged ------------------------------------ */
+  --color-ink-50: oklch(0.985 0.002 265);
+  --color-ink-100: oklch(0.968 0.004 265);
+  --color-ink-200: oklch(0.925 0.006 265);
+  --color-ink-300: oklch(0.868 0.008 265);
+  --color-ink-400: oklch(0.705 0.012 265);
+  --color-ink-500: oklch(0.565 0.014 265);
+  --color-ink-600: oklch(0.448 0.014 265);
+  --color-ink-700: oklch(0.372 0.014 265);
+  --color-ink-800: oklch(0.278 0.012 265);
+  --color-ink-900: oklch(0.208 0.011 265);
+  --color-ink-950: oklch(0.145 0.01 265);
+
+  /* ---- Brand accent -- retuned from generic SaaS blue (hue 264) to a calmer
+     slate-teal (hue ~206). Same lightness/chroma progression shape, so every
+     existing bg-brand-600 / text-brand-700 usage keeps its contrast ratio. -- */
+  --color-brand-50: oklch(0.975 0.008 210);
+  --color-brand-100: oklch(0.95 0.016 210);
+  --color-brand-200: oklch(0.905 0.028 209);
+  --color-brand-300: oklch(0.83 0.045 208);
+  --color-brand-400: oklch(0.72 0.065 207);
+  --color-brand-500: oklch(0.6 0.078 206);
+  --color-brand-600: oklch(0.5 0.082 205);
+  --color-brand-700: oklch(0.42 0.075 205);
+  --color-brand-800: oklch(0.35 0.062 206);
+  --color-brand-900: oklch(0.28 0.048 207);
+
+  /* ---- Semantic ramps -- desaturated to sit beside ink/brand instead of
+     stock Tailwind emerald/amber/red/sky. Same 5 steps Badge.tsx uses
+     (50/100/200/700/800); 300/600 included for future use (callouts, charts). */
+  --color-success-50: oklch(0.965 0.02 145);
+  --color-success-100: oklch(0.93 0.035 145);
+  --color-success-200: oklch(0.87 0.055 146);
+  --color-success-300: oklch(0.78 0.075 146);
+  --color-success-600: oklch(0.52 0.09 148);
+  --color-success-700: oklch(0.44 0.08 149);
+  --color-success-800: oklch(0.37 0.065 150);
+
+  --color-warning-50: oklch(0.97 0.025 85);
+  --color-warning-100: oklch(0.94 0.05 83);
+  --color-warning-200: oklch(0.88 0.08 78);
+  --color-warning-300: oklch(0.8 0.1 72);
+  --color-warning-600: oklch(0.58 0.11 60);
+  --color-warning-700: oklch(0.48 0.1 55);
+  --color-warning-800: oklch(0.4 0.085 50);
+
+  --color-danger-50: oklch(0.97 0.018 25);
+  --color-danger-100: oklch(0.93 0.035 24);
+  --color-danger-200: oklch(0.87 0.06 23);
+  --color-danger-300: oklch(0.78 0.09 22);
+  --color-danger-600: oklch(0.53 0.135 24);
+  --color-danger-700: oklch(0.45 0.13 23);
+  --color-danger-800: oklch(0.38 0.11 22);
+
+  --color-info-50: oklch(0.97 0.012 250);
+  --color-info-100: oklch(0.94 0.022 250);
+  --color-info-200: oklch(0.89 0.038 250);
+  --color-info-300: oklch(0.8 0.06 250);
+  --color-info-600: oklch(0.55 0.1 254);
+  --color-info-700: oklch(0.47 0.095 255);
+  --color-info-800: oklch(0.4 0.08 256);
+
+  /* ---- Surfaces & borders -- formalizes what was implicit (bg-white,
+     border-ink-200) so components can express intent (raised vs. sunken)
+     instead of repeating literal colors. -------------------------------- */
+  --color-surface-page: var(--color-ink-50);
+  --color-surface-raised: oklch(1 0 0);
+  --color-surface-sunken: var(--color-ink-100);
+  --color-border-subtle: var(--color-ink-100);
+  --color-border-default: var(--color-ink-200);
+  --color-border-strong: var(--color-ink-300);
+
+  /* ---- Typography -- all-sans. Public Sans Variable everywhere; hierarchy
+     comes from size/weight, not a second family (see main.tsx for the
+     self-hosted font import). ------------------------------------------- */
+  --font-sans: 'Public Sans Variable', ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  /* Tailwind's own scale, refined: text-sm/text-xs (the overwhelming
+     majority of usages in this app) get more breathing room; text-2xl/3xl
+     (page titles, stat values) get real presence instead of barely
+     outranking body text. */
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.5;
+  --text-xs--letter-spacing: 0.01em;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.55;
+  --text-base: 1rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.125rem;
+  --text-lg--line-height: 1.5;
+  --text-xl: 1.375rem;
+  --text-xl--line-height: 1.4;
+  --text-xl--letter-spacing: -0.01em;
+  --text-2xl: 1.75rem;
+  --text-2xl--line-height: 1.25;
+  --text-2xl--letter-spacing: -0.015em;
+  --text-3xl: 2.25rem;
+  --text-3xl--line-height: 1.15;
+  --text-3xl--letter-spacing: -0.02em;
+
+  /* ---- Radius -- current usage is rounded-lg/rounded-md dominant; nudged up
+     slightly so raised surfaces (cards, modals) read as a deliberate step,
+     not "everything is the same corner". -------------------------------- */
+  --radius-lg: 0.625rem;
+  --radius-xl: 0.875rem;
+
+  /* ---- Shadows -- retinted with the ink hue instead of pure black, so
+     elevation feels part of the palette rather than a generic drop-shadow. */
+  --shadow-sm: 0 1px 2px 0 oklch(0.208 0.011 265 / 0.04), 0 1px 3px 0 oklch(0.208 0.011 265 / 0.06);
+  --shadow-md:
+    0 2px 4px -1px oklch(0.208 0.011 265 / 0.05), 0 4px 8px -2px oklch(0.208 0.011 265 / 0.08);
+  --shadow-lg:
+    0 4px 8px -2px oklch(0.208 0.011 265 / 0.06), 0 12px 24px -6px oklch(0.208 0.011 265 / 0.1);
+
+  /* ---- Motion -------------------------------------------------------- */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --duration-fast: 120ms;
+  --duration-standard: 200ms;
+  --duration-overlay: 320ms;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-surface-page text-ink-800 font-sans antialiased;
+  }
+
+  /* A single visible focus treatment for every interactive element, so keyboard
+     navigation stays legible without each component re-declaring it. */
+  :where(a, button, input, select, textarea, [tabindex]):focus-visible {
+    @apply outline-brand-600 rounded-md outline-2 outline-offset-2;
+  }
+
+  /* Respect the OS-level motion preference app-wide, at the token layer,
+     rather than per-component. Instant state changes remain fully functional
+     -- only the transition/animation is removed. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  .card {
+    @apply border-border-default bg-surface-raised shadow-sm rounded-xl border;
+  }
+
+  /* Reaches for the new motion tokens without requiring every transition-*
+     usage across the app to be rewritten individually. */
+  .transition-standard {
+    transition-duration: var(--duration-standard);
+    transition-timing-function: var(--ease-standard);
+  }
+
+  /* Popovers (UserMenu). Reduced-motion is already handled globally above --
+     the base layer's media query collapses this to 0.01ms for anyone who has
+     asked for less motion, so it does not need its own guard here. */
+  .animate-menu-in {
+    animation: menu-in var(--duration-overlay) var(--ease-standard);
+  }
+}
+
+@keyframes menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

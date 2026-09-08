@@ -1,0 +1,70 @@
+# Environment files and credentials
+.env
+.env.*
+!.env.example
+!**/.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+secrets*.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.python-version
+
+# Python tooling and coverage
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+.tox/
+.nox/
+
+# JavaScript / frontend
+node_modules/
+dist/
+build/
+.vite/
+coverage/
+*.tsbuildinfo
+
+# Generated application data
+reports/*
+!reports/.gitkeep
+outputs/
+uploads/
+recordings/
+logs/
+*.log
+*.pid
+*.db
+*.sqlite
+*.sqlite3
+
+# Local platform and assistant metadata
+.vercel/
+.claude/
+.codex/
+.cursor/
+
+# Editors and operating systems
+.vscode/
+.idea/
+*.swp
+*.swo
+*.tmp
+*.temp
+*.bak
+.DS_Store
+Thumbs.db
+Desktop.ini

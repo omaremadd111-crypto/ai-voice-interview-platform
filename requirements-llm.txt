@@ -1,0 +1,4 @@
+# Optional: only required when MOCK_MODE=false and LLM_PROVIDER=mistral
+mistralai>=2.9.3,<3
+# Optional: only required when MOCK_MODE=false and LLM_PROVIDER=openrouter
+openai>=1.0,<4

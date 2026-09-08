@@ -1,0 +1,17 @@
+gradio>=4.44
+pydantic>=2.6
+pypdf>=4.0
+python-docx>=1.1
+python-dotenv>=1.0
+pytest>=7.4
+SQLAlchemy>=2.0
+alembic>=1.13
+psycopg[binary]>=3.1
+fastapi>=0.115
+uvicorn[standard]>=0.30
+pyjwt>=2.9
+python-multipart>=0.0.9
+httpx2>=2.10
+aiohttp>=3.10
+livekit-agents==1.6.8
+livekit-api==1.2.0

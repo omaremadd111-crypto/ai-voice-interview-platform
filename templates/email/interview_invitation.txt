@@ -1,0 +1,13 @@
+Hi {candidate_first_name},
+
+Thanks for applying to {position_title} at {company_name}.
+
+Your screening interview is a short, AI-conducted voice conversation. You can start it now or come back to this link later:
+
+{interview_url}
+
+This link works until {expires_at_display}. If it has expired when you return, reply to this email and the hiring team can send you a new one.
+
+Find a quiet spot with a working microphone before you begin.
+
+-- {company_name}

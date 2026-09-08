@@ -1,0 +1,15 @@
+{
+  "demo_notice": "DEMO DATA — fictional content created for this prototype. Not an actual FlairsTech vacancy, requirement, candidate, or process.",
+  "profile": "average",
+  "answers": {
+    "introduction": "I am a junior developer with experience on a small Python utility and a course RAG project. I am interested in developing stronger production engineering skills.",
+    "candidate_background": "I have about one year of junior development experience. Most of my work involved a Python API, SQL queries, basic tests, and communicating progress to my team.",
+    "cv_project_validation": "I built the Orchid internal Python API with SQL and added a few pytest checks. It was used by a small team, but I did not own deployment or define production monitoring.",
+    "technical": "I used a RAG starter project in a course and connected it to a vector database. I understand that retrieval selects context before generation, although I have not designed a formal evaluation set.",
+    "problem_solving": "A SQL query was slow, so I reviewed the logs with a senior engineer and added an index. I checked the result manually, but we did not record a detailed benchmark.",
+    "behavioral": "I explained a delayed task to a teammate, shared what was blocking me, and asked for help. We adjusted the work and I provided progress updates during the next meeting.",
+    "closing": "I would like to learn more about the team's onboarding process and the kinds of RAG projects a junior engineer supports.",
+    "follow_up": "My direct experience is limited to the small Python API and course RAG exercise. I can describe the basic implementation, but I have not yet validated it in a production environment.",
+    "fallback": "My experience is introductory, so I can explain the small implementation I completed and identify the production details I would need to learn."
+  }
+}

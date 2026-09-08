@@ -1,0 +1,15 @@
+{
+  "demo_notice": "DEMO DATA — fictional content created for this prototype. Not an actual FlairsTech vacancy, requirement, candidate, or process.",
+  "profile": "weak",
+  "answers": {
+    "introduction": "I recently completed university coursework and I am looking for an opportunity to gain practical engineering experience.",
+    "candidate_background": "I have completed classroom exercises, but I have not yet worked on a professional software engineering project or supported a production system.",
+    "cv_project_validation": "I followed an online example and copied the suggested steps, but I cannot explain the design choices or how the result should be checked.",
+    "technical": "I don't know.",
+    "problem_solving": "When an exercise failed, I tried the same steps again and then asked someone else for the answer without documenting the cause.",
+    "behavioral": "I don't know.",
+    "closing": "I would like to know what training is available for someone with limited practical experience.",
+    "follow_up": "I do not have a concrete technical example or measured outcome that I can add.",
+    "fallback": "I do not have enough practical experience to provide a detailed example for this topic."
+  }
+}
